@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sekar Ayu Alifia Putri 🌷</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+background:linear-gradient(
+to bottom,
+#87CEEB 0%,
+#AEE2FF 40%,
+#C8F7C5 100%
+);
+}
+
+/* SKY */
+
+.sky{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+/* CLOUDS */
+
+.cloud{
+position:absolute;
+background:white;
+border-radius:50px;
+opacity:.9;
+}
+
+.cloud::before,
+.cloud::after{
+content:'';
+position:absolute;
+background:white;
+border-radius:50%;
+}
+
+.cloud1{
+width:120px;
+height:50px;
+top:12%;
+left:-150px;
+animation:cloudMove 35s linear infinite;
+}
+
+.cloud1::before{
+width:60px;
+height:60px;
+left:15px;
+top:-25px;
+}
+
+.cloud1::after{
+width:70px;
+height:70px;
+right:10px;
+top:-30px;
+}
+
+.cloud2{
+width:180px;
+height:70px;
+top:25%;
+left:-250px;
+animation:cloudMove 50s linear infinite;
+animation-delay:-10s;
+}
+
+.cloud2::before{
+width:80px;
+height:80px;
+left:20px;
+top:-35px;
+}
+
+.cloud2::after{
+width:90px;
+height:90px;
+right:20px;
+top:-40px;
+}
+
+@keyframes cloudMove{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(calc(100vw + 400px));
+}
+}
+
+/* SUN */
+
+.sun{
+position:absolute;
+top:50px;
+right:80px;
+width:110px;
+height:110px;
+border-radius:50%;
+background:#FFD54F;
+box-shadow:0 0 60px #FFD54F;
+}
+
+/* GROUND */
+
+.ground{
+position:absolute;
+bottom:0;
+width:100%;
+height:35%;
+background:#7BC96F;
+}
+
+/* FLOWERS */
+
+.flower{
+position:absolute;
+bottom:22%;
+font-size:2.3rem;
+animation:sway 3s ease-in-out infinite;
+}
+
+.flower:nth-child(1){left:8%;}
+.flower:nth-child(2){left:18%;}
+.flower:nth-child(3){left:28%;}
+.flower:nth-child(4){left:40%;}
+.flower:nth-child(5){left:52%;}
+.flower:nth-child(6){left:64%;}
+.flower:nth-child(7){left:76%;}
+.flower:nth-child(8){left:88%;}
+
+@keyframes sway{
+0%,100%{
+transform:rotate(-3deg);
+}
+50%{
+transform:rotate(3deg);
+}
+}
+
+/* DEER */
+
+.deer{
+position:absolute;
+bottom:22%;
+left:-100px;
+font-size:3rem;
+animation:deerWalk 40s linear infinite;
+}
+
+@keyframes deerWalk{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(calc(100vw + 200px));
+}
+}
+
+/* GATE */
+
+.gate-container{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+z-index:10;
+max-width:700px;
+padding:20px;
+}
+
+.title{
+font-size:3rem;
+color:white;
+text-shadow:2px 2px 10px rgba(0,0,0,.2);
+margin-bottom:20px;
+}
+
+.subtitle{
+font-size:1.2rem;
+color:white;
+line-height:1.8;
+margin-bottom:30px;
+text-shadow:1px 1px 5px rgba(0,0,0,.2);
+}
+
+.enter-btn{
+border:none;
+padding:16px 35px;
+font-size:1.1rem;
+border-radius:999px;
+background:#FFB6C1;
+color:#fff;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.enter-btn:hover{
+transform:translateY(-3px);
+}
+
+/* PETALS */
+
+.petal{
+position:absolute;
+font-size:1.2rem;
+animation:fall linear infinite;
+opacity:.8;
+}
+
+@keyframes fall{
+from{
+transform:translateY(-100px) rotate(0deg);
+}
+to{
+transform:translateY(120vh) rotate(360deg);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sky">
+
+<div class="sun"></div>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<div class="deer">🦌</div>
+
+<div class="flower">🌷</div>
+<div class="flower">🌸</div>
+<div class="flower">🌼</div>
+<div class="flower">🌷</div>
+<div class="flower">🌺</div>
+<div class="flower">🌸</div>
+<div class="flower">🌷</div>
+<div class="flower">🌼</div>
+
+<div class="ground"></div>
+
+</div>
+
+<div class="gate-container">
+
+<h1 class="title">
+For Sekar Ayu Alifia Putri 🌷
+</h1>
+
+<p class="subtitle">
+Selamat datang, Ayu.<br><br>
+
+Aku tidak pandai merangkai bunga.<br>
+Jadi aku merangkai hal-hal yang selalu membuatku mengingatmu.
+</p>
+
+<button class="enter-btn" id="enterBtn">
+🌷 Enter The Garden
+</button>
+
+</div>
+
+<script>
+
+for(let i=0;i<20;i++){
+
+const petal=document.createElement('div');
+
+petal.className='petal';
+
+petal.innerHTML='🌸';
+
+petal.style.left=Math.random()*100+'vw';
+
+petal.style.animationDuration=
+(8+Math.random()*10)+'s';
+
+petal.style.animationDelay=
+Math.random()*8+'s';
+
+document.body.appendChild(petal);
+
+}
+
+document
+.getElementById('enterBtn')
+.addEventListener('click',()=>{
+
+alert(
+'🌷 Welcome to Ayu Garden 🌷\n\nScene berikutnya akan kita bangun setelah fondasi taman berhasil.'
+);
+
+});
+
+</script>
+
+</body>
+</html>
