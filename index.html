@@ -236,8 +236,6 @@ to{
 transform:translateY(120vh) rotate(360deg);
 }
 }
-
-</style>
 /* MAIN GARDEN */
 
 #gardenScreen{
@@ -292,6 +290,8 @@ color:#555;
 .garden-card:hover{
 transform:translateY(-8px);
 }
+</style>
+
 </head>
 
 <body>
@@ -318,7 +318,7 @@ transform:translateY(-8px);
 
 </div>
 
-<div class="gate-container">
+<div class="gate-container" id="openingScreen">
 
 <h1 class="title">
 For Sekar Ayu Alifia Putri 🌷
@@ -359,13 +359,20 @@ document.body.appendChild(petal);
 
 }
 
-document
-.getElementById('enterBtn')
-.addEventListener('click',()=>{
+const enterBtn =
+document.getElementById('enterBtn');
 
-alert(
-'🌷 Welcome to Ayu Garden 🌷\n\nScene berikutnya akan kita bangun setelah fondasi taman berhasil.'
-);
+const openingScreen =
+document.getElementById('openingScreen');
+
+const gardenScreen =
+document.getElementById('gardenScreen');
+
+enterBtn.addEventListener('click',()=>{
+
+openingScreen.style.display='none';
+
+gardenScreen.style.display='block';
 
 });
 
