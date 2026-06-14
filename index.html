@@ -237,7 +237,60 @@ transform:translateY(120vh) rotate(360deg);
 }
 }
 
-</style>
+</style>/* MAIN GARDEN */
+
+#gardenScreen{
+display:none;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:20;
+padding-top:80px;
+}
+
+.garden-title{
+text-align:center;
+font-size:2.8rem;
+color:white;
+margin-bottom:40px;
+text-shadow:2px 2px 8px rgba(0,0,0,.2);
+}
+
+.garden-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:20px;
+}
+
+.garden-card{
+width:180px;
+height:180px;
+background:rgba(255,255,255,.85);
+border-radius:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:3rem;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.garden-card span{
+font-size:1rem;
+margin-top:10px;
+font-weight:bold;
+color:#555;
+}
+
+.garden-card:hover{
+transform:translateY(-8px);
+}
 </head>
 
 <body>
@@ -316,6 +369,43 @@ alert(
 });
 
 </script>
+<!-- MAIN GARDEN -->
 
+<div id="gardenScreen">
+
+    <h1 class="garden-title">
+        🌷 Ayu's Garden 🌷
+    </h1>
+
+    <div class="garden-grid">
+
+        <div class="garden-card" id="tulip">
+            🌷
+            <span>Tulip Field</span>
+        </div>
+
+        <div class="garden-card" id="train">
+            🚂
+            <span>Train Station</span>
+        </div>
+
+        <div class="garden-card" id="strawberry">
+            🍓
+            <span>Strawberry Path</span>
+        </div>
+
+        <div class="garden-card" id="sky">
+            ☁️
+            <span>Sky View</span>
+        </div>
+
+        <div class="garden-card" id="knitting">
+            🧶
+            <span>Knitting Corner</span>
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
